@@ -1,5 +1,5 @@
 import './banner.css'
-import banner from '../../imagens/HeaderHeader_total.png';
+import banner from '../../imagens/Banner.png';
 function Banner() {
     return (
         <header className='banner'>

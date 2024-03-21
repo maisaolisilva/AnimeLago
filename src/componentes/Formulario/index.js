@@ -1,7 +1,20 @@
 import './Formulario.css';
 //automaticamente ele acessa o index.js da pasta CampoTexto
 import CampoTexto from '../CampoTexto';
+import ListaSuspensa from '../ListaSuspensa';
 const Formulario = () => {
+
+    const generos = [
+        'Shonen',
+        'shoujo',
+        'Seinen',
+        'Josei',
+        'Ecchi',
+        'Harem',
+        'Isekai',
+        'Mecha'
+
+    ]
     return (
         <section className='formulario'>
             <form>
@@ -9,7 +22,9 @@ const Formulario = () => {
                 <CampoTexto label="Nome" placeholder="Digite seu nome"/>
                 <CampoTexto label="Diretor" placeholder="Digite o nome do diretor"/>
                 <CampoTexto label="Estúdio" placeholder="Digite o nome do estúdio"/>
+                <CampoTexto label="Observações" placeholder="Digite as observações em relação ao anime"/>
                 <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem"/>
+                <ListaSuspensa label='Gêneros' itens={generos} />
             </form>
         </section>
     )
