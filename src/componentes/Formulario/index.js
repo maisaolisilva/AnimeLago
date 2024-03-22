@@ -2,6 +2,7 @@ import './Formulario.css';
 //automaticamente ele acessa o index.js da pasta CampoTexto
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
+import Botao from '../Botao';
 const Formulario = () => {
 
     const generos = [
@@ -25,6 +26,7 @@ const Formulario = () => {
                 <CampoTexto label="Observações" placeholder="Digite as observações em relação ao anime"/>
                 <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem"/>
                 <ListaSuspensa label='Gêneros' itens={generos} />
+                <Botao nome="Criar Card" />
             </form>
         </section>
     )
