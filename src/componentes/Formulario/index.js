@@ -16,17 +16,23 @@ const Formulario = () => {
         'Mecha'
 
     ]
+
+    const aoSalvar = (event) => {
+        event.preventDefaul();
+        console.log("Formulário fooi submetido");
+    }
+
     return (
         <section className='formulario'>
-            <form>
+            <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do anime</h2>
-                <CampoTexto label="Nome" placeholder="Digite seu nome"/>
-                <CampoTexto label="Diretor" placeholder="Digite o nome do diretor"/>
-                <CampoTexto label="Estúdio" placeholder="Digite o nome do estúdio"/>
+                <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite seu nome"/>
+                <CampoTexto obrigatorio={true} label="Diretor" placeholder="Digite o nome do diretor"/>
+                <CampoTexto obrigatorio={true} label="Estúdio" placeholder="Digite o nome do estúdio"/>
                 <CampoTexto label="Observações" placeholder="Digite as observações em relação ao anime"/>
                 <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem"/>
-                <ListaSuspensa label='Gêneros' itens={generos} />
-                <Botao nome="Criar Card" />
+                <ListaSuspensa obrigatorio={true} label='Gêneros' itens={generos} />
+                <Botao>Criar Card</Botao>
             </form>
         </section>
     )
