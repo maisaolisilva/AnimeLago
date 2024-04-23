@@ -1,0 +1,12 @@
+.genero {
+    text-align: center;
+    padding: 32px;
+}
+
+.genero h3 {
+    font-size: 32px;
+    border-bottom: 4px solid;
+    /*display inline-block fez com que o border-bottom ocupasse apenas o tamanho do título*/
+    display: inline-block;
+    padding-bottom: 8px; 
+}

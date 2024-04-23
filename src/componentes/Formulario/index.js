@@ -6,18 +6,6 @@ import Botao from '../Botao';
 import { useState } from 'react';
 const Formulario = (props) => {
 
-    const generos = [
-        'Shonen',
-        'shoujo',
-        'Seinen',
-        'Josei',
-        'Ecchi',
-        'Harem',
-        'Isekai',
-        'Mecha'
-
-    ]
-
     const [nome, setNome] = useState('');
     const [diretor, setDiretor] = useState(''); 
     const [estudio, setEstudio] = useState(''); 
@@ -28,6 +16,7 @@ const Formulario = (props) => {
     const aoSalvar = (event) => {
 
         event.preventDefault();
+
         //mesma coisa de um objeto criado de maneira explicita:
         //nome: nome,
         //diretor: diretor
@@ -81,7 +70,7 @@ const Formulario = (props) => {
                 <ListaSuspensa 
                     obrigatorio={true} 
                     label='Gêneros' 
-                    itens={generos} 
+                    itens={props.generos} 
                     valor={genero}
                     aoAlterado={setGenero}
                     />
