@@ -28,6 +28,13 @@ const Formulario = (props) => {
             imagem,
             genero,
         });
+
+        setNome('');
+        setDiretor('');
+        setEstudio('');
+        setObservacoes('');
+        setImagem('');
+        setGenero('Shonen');
     }
 
     return (

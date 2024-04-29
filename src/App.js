@@ -60,7 +60,13 @@ function App() {
     <div className="App">
       <Banner />
       <Formulario generos={generos.map(genero => genero.nome)} aoAnimeCadastrado={anime => aoNovoAnimeAdicionado(anime)}/>
-      {generos.map(genero => <Genero nome={genero.nome} key={genero.nome} corPrimaria={genero.corPrimaria} corSecundaria={genero.corSecundaria}/>)}
+      {generos.map(genero => <Genero 
+        nome={genero.nome} 
+        key={genero.nome} 
+        corPrimaria={genero.corPrimaria} 
+        corSecundaria={genero.corSecundaria}
+        animes={animes.filter(anime => anime.genero === genero.nome)}  
+      />)}
     </div>
   );
 }
