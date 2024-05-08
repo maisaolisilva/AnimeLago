@@ -8,8 +8,7 @@ const Formulario = (props) => {
 
     const [nome, setNome] = useState('');
     const [diretor, setDiretor] = useState(''); 
-    const [estudio, setEstudio] = useState(''); 
-    const [observacoes, setObservacoes] = useState(''); 
+    const [estudio, setEstudio] = useState('');  
     const [imagem, setImagem] = useState(''); 
     const [genero, setGenero] = useState('Shonen'); 
 
@@ -24,7 +23,6 @@ const Formulario = (props) => {
             nome,
             diretor,
             estudio,
-            observacoes,
             imagem,
             genero,
         });
@@ -32,7 +30,6 @@ const Formulario = (props) => {
         setNome('');
         setDiretor('');
         setEstudio('');
-        setObservacoes('');
         setImagem('');
         setGenero('Shonen');
     }
@@ -62,12 +59,6 @@ const Formulario = (props) => {
                     valor={estudio}
                     aoAlterado={setEstudio}
                     />
-                <CampoTexto 
-                    label="Observações" 
-                    placeholder="Digite as observações em relação ao anime"
-                    valor={observacoes}
-                    aoAlterado={setObservacoes}
-                />
                 <CampoTexto 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"

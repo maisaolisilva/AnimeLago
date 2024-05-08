@@ -9,12 +9,14 @@ const Genero = (props) => {
         props.animes.length > 0 && <section className='genero' style={css}>
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
             <div className='animes'>
-                {props.animes.map(anime => <Anime 
+                {props.animes.map(anime => <Anime
+                    key={anime.nome} 
                     nome={anime.nome} 
                     diretor={anime.diretor}
                     estudio={anime.estudio}
                     observacoes={anime.observacoes}
                     imagem={anime.imagem}
+                    corDeFundo={props.corPrimaria}
                 />)}
             </div>
         </section>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario';
 import Genero from './componentes/Genero';
+import Rodape from './componentes/Rodape';
 
 function App() {
 
@@ -51,7 +52,6 @@ function App() {
 
   const [animes, setAnimes] = useState([]);
   const aoNovoAnimeAdicionado = anime => {
-    console.log(anime);
     //set cria um array novo, pega a lista antiga e faz o expalhamento e acrescenta o novo anime
     setAnimes([...animes, anime])
   }
@@ -67,6 +67,7 @@ function App() {
         corSecundaria={genero.corSecundaria}
         animes={animes.filter(anime => anime.genero === genero.nome)}  
       />)}
+      <Rodape />
     </div>
   );
 }
