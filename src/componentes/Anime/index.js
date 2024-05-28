@@ -1,7 +1,9 @@
 import './anime.css';
+import { IoMdCloseCircle } from "react-icons/io";
 
-const Anime = ({nome, imagem, diretor, estudio, corDeFundo}) => {
+const Anime = ({nome, imagem, diretor, estudio, corDeFundo, aoDeletar, id}) => {
     return (<div className='anime'>
+        <IoMdCloseCircle size={25} className='deletar' onClick={() => aoDeletar(id)} />
         <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
             <img src={imagem} alt={nome}/>
         </div>

@@ -4,13 +4,14 @@ import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 const Formulario = (props) => {
 
     const [nome, setNome] = useState('');
     const [diretor, setDiretor] = useState(''); 
     const [estudio, setEstudio] = useState('');  
     const [imagem, setImagem] = useState(''); 
-    const [genero, setGenero] = useState('Shonen'); 
+    const [genero, setGenero] = useState('Shonen');
 
     const aoSalvar = (event) => {
 
@@ -25,6 +26,7 @@ const Formulario = (props) => {
             estudio,
             imagem,
             genero,
+            id: uuidv4(),
         });
 
         setNome('');
