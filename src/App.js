@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
-  const [generos, setTimes] = useState([
+  const [generos, setGenero] = useState([
     {
       id: uuidv4(),
       nome:'Shonen',
@@ -66,7 +66,7 @@ function App() {
 
   //função para mudar a cor do gênero através do input de cor 
   function mudarCorDoGenero(cor, id) {
-    setTimes(generos.map(genero => {
+    setGenero(generos.map(genero => {
       if(genero.id === id) {
         genero.corPrimaria = cor;
       }
@@ -74,10 +74,19 @@ function App() {
     }))
   }
 
+  //Função para criar um novo gênero
+  function cadastrarGenero(novoGenero){
+    setGenero([...generos, novoGenero])
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Formulario generos={generos.map(genero => genero.nome)} aoAnimeCadastrado={anime => aoNovoAnimeAdicionado(anime)}/>
+      <Formulario
+        generos={generos.map(genero => genero.nome)} 
+        aoAnimeCadastrado={anime => aoNovoAnimeAdicionado(anime)}
+        cadastrarGenero={cadastrarGenero}
+      />
 
       {generos.map(genero => <Genero 
         nome={genero.nome} 

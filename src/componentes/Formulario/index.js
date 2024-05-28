@@ -5,6 +5,7 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
 const Formulario = (props) => {
 
     const [nome, setNome] = useState('');
@@ -12,6 +13,8 @@ const Formulario = (props) => {
     const [estudio, setEstudio] = useState('');  
     const [imagem, setImagem] = useState(''); 
     const [genero, setGenero] = useState('Shonen');
+    const [nomeGenero, setNomeGenero] = useState(''); 
+    const [cor, setCor] = useState('');
 
     const aoSalvar = (event) => {
 
@@ -33,7 +36,15 @@ const Formulario = (props) => {
         setDiretor('');
         setEstudio('');
         setImagem('');
-        setGenero('Shonen');
+        setGenero('');
+    }
+
+    //Função que será realizada ao clicar no botão para criar um novo gênero
+    function aoNovoGeneroAdicionado(event){
+        event.preventDefault(); 
+        props.cadastrarGenero({id: uuidv4(), nome: nomeGenero, corPrimaria: cor});
+        setNomeGenero('');
+        setCor('');
     }
 
     return (
@@ -75,6 +86,24 @@ const Formulario = (props) => {
                     aoAlterado={setGenero}
                     />
                 <Botao>Criar Card</Botao>
+            </form>
+            <form onSubmit={aoNovoGeneroAdicionado}>
+                <h2>Preencha os dados para adicionar um novo gênero</h2>
+                <CampoTexto 
+                    obrigatorio 
+                    label="Nome" 
+                    placeholder="Digite seu nome" 
+                    valor={nomeGenero}
+                    aoAlterado={setNomeGenero}
+                />
+                <CampoTexto 
+                    obrigatorio 
+                    label="Cor" 
+                    placeholder="Digite a cor do gênero (#hexadecimal)"
+                    valor={cor}
+                    aoAlterado={setCor}
+                />
+                <Botao>Criar um novo gênero</Botao>
             </form>
         </section>
     )
