@@ -1,6 +1,6 @@
 import './Formulario.css';
-//automaticamente ele acessa o index.js da pasta CampoTexto
-import CampoTexto from '../CampoTexto';
+//automaticamente ele acessa o index.js da pasta Campo
+import Campo from '../Campo';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
@@ -51,28 +51,28 @@ const Formulario = (props) => {
         <section className='formulario'>
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do anime</h2>
-                <CampoTexto 
+                <Campo 
                     obrigatorio={true} 
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     valor={nome}
                     aoAlterado={setNome}
                 />
-                <CampoTexto 
+                <Campo 
                     obrigatorio={true} 
                     label="Diretor" 
                     placeholder="Digite o nome do diretor"
                     valor={diretor}
                     aoAlterado={setDiretor}
                 />
-                <CampoTexto 
+                <Campo 
                     obrigatorio={true} 
                     label="Estúdio" 
                     placeholder="Digite o nome do estúdio"
                     valor={estudio}
                     aoAlterado={setEstudio}
                     />
-                <CampoTexto 
+                <Campo 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
@@ -89,17 +89,18 @@ const Formulario = (props) => {
             </form>
             <form onSubmit={aoNovoGeneroAdicionado}>
                 <h2>Preencha os dados para adicionar um novo gênero</h2>
-                <CampoTexto 
+                <Campo 
                     obrigatorio 
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     valor={nomeGenero}
                     aoAlterado={setNomeGenero}
                 />
-                <CampoTexto 
+                <Campo 
                     obrigatorio 
+                    type='color'
                     label="Cor" 
-                    placeholder="Digite a cor do gênero (#hexadecimal)"
+                    placeholder=""
                     valor={cor}
                     aoAlterado={setCor}
                 />
