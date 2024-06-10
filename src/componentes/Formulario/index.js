@@ -15,6 +15,7 @@ const Formulario = (props) => {
     const [genero, setGenero] = useState('Shonen');
     const [nomeGenero, setNomeGenero] = useState(''); 
     const [cor, setCor] = useState('');
+    
 
     const aoSalvar = (event) => {
 
@@ -30,6 +31,7 @@ const Formulario = (props) => {
             imagem,
             genero,
             id: uuidv4(),
+            favorito:false
         });
 
         setNome('');
@@ -46,6 +48,7 @@ const Formulario = (props) => {
         setNomeGenero('');
         setCor('');
     }
+    
 
     return (
         <section className='formulario'>

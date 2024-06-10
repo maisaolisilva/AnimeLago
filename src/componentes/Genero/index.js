@@ -22,6 +22,8 @@ const Genero = (props) => {
                     corDeFundo={props.corPrimaria}
                     aoDeletar={props.aoDeletar}
                     id={anime.id}
+                    favorito={anime.favorito}
+                    aoFavoritar={props.aoFavoritar}
                 />}
                 )}
             </div>
