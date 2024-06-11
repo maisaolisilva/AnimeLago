@@ -51,6 +51,7 @@ function App() {
     }
   ]);
 
+  //Foi colocado alguns animes prévios na lista para aparecerem na página assim que recarregada
   const [animes, setAnimes] = useState([
     {
       nome: 'Gintama',
@@ -81,6 +82,22 @@ function App() {
       imagem: 'https://upload.wikimedia.org/wikipedia/pt/9/9f/Fullmetal_Alchemist.jpg',
       diretor: 'Yasuhiro Irie', 
       estudio: 'Bones',
+      id: uuidv4(),
+      genero: 'Shonen', 
+    },
+    {
+      nome: 'Death Note',
+      imagem: 'https://upload.wikimedia.org/wikipedia/pt/c/c0/Death_Note_vol._01.jpg',
+      diretor: 'Tetsurō Araki', 
+      estudio: 'Madhouse',
+      id: uuidv4(),
+      genero: 'Seinen', 
+    },
+    {
+      nome: 'Haikyu!!',
+      imagem: 'https://upload.wikimedia.org/wikipedia/pt/7/73/Haiky%C5%AB%21%21_vol_5.jpg',
+      diretor: 'Susumu Mitsunaka', 
+      estudio: 'Production I.G',
       id: uuidv4(),
       genero: 'Shonen', 
     },

@@ -10,6 +10,8 @@ const Anime = ({nome, imagem, diretor, estudio, corDeFundo, aoDeletar, id, favor
         onClick: () => aoFavoritar(id),
     }
 
+    //Para o componente de coração foi necessário utilizar CONDITIONAL RENDERING com o operador ternário
+
     return (<div className='anime'>
         <IoMdCloseCircle size={25} className='deletar' onClick={() => aoDeletar(id)} />
         <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
