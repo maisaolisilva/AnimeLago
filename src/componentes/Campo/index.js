@@ -1,11 +1,7 @@
 
 import './Campo.css';
 //o input será obrigatório caso a propriedade obrigatório=true
-const Campo = ({ type = 'text', label, placeholder, valor, aoAlterado, obrigatorio = false }) => {
-
-    const aoDigitado = (event) => {
-        aoAlterado(event.target.value)
-    }
+const Campo = ({ type = 'text', label, placeholder, valor, onChange, obrigatorio = false }) => {
 
     return (
         <div className={`campo campo-${type}`}> 
@@ -13,7 +9,7 @@ const Campo = ({ type = 'text', label, placeholder, valor, aoAlterado, obrigator
             <input 
                 type={type} 
                 value={valor} 
-                onChange={aoDigitado} 
+                onChange={onChange(event => event.target.value)} 
                 required={obrigatorio} 
                 placeholder={`${placeholder}...`}/>
         </div>

@@ -59,34 +59,34 @@ const Formulario = (props) => {
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     valor={nome}
-                    aoAlterado={setNome}
+                    onChange={setNome}
                 />
                 <Campo 
                     obrigatorio={true} 
                     label="Diretor" 
                     placeholder="Digite o nome do diretor"
                     valor={diretor}
-                    aoAlterado={setDiretor}
+                    onChange={setDiretor}
                 />
                 <Campo 
                     obrigatorio={true} 
                     label="Estúdio" 
                     placeholder="Digite o nome do estúdio"
                     valor={estudio}
-                    aoAlterado={setEstudio}
+                    onChange={setEstudio}
                     />
                 <Campo 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
-                    aoAlterado={setImagem}    
+                    onChange={setImagem}    
                 />
                 <ListaSuspensa 
                     obrigatorio={true} 
                     label='Gêneros' 
                     itens={props.generos} 
                     valor={genero}
-                    aoAlterado={setGenero}
+                    onChange={setGenero}
                     />
                 <Botao>Criar Card</Botao>
             </form>
@@ -97,7 +97,7 @@ const Formulario = (props) => {
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     valor={nomeGenero}
-                    aoAlterado={setNomeGenero}
+                    onChange={setNomeGenero}
                 />
                 <Campo 
                     obrigatorio 
@@ -105,7 +105,7 @@ const Formulario = (props) => {
                     label="Cor" 
                     placeholder=""
                     valor={cor}
-                    aoAlterado={setCor}
+                    onChange={setCor}
                 />
                 <Botao>Criar um novo gênero</Botao>
             </form>
